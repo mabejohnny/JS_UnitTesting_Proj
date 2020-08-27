@@ -75,18 +75,18 @@ describe('VendingMachine constructor', function() {// SUITE
         vendingMachine = new VendingMachine();
     });
     it('adds 1 candy bar objects to vending machine inventory if candy bar is choosen', function() { //SPEC
-        let itemToReinsert = ""
-        vendingMachine.addItemBackToInventory(candyBars)
-        expect(vendingMachine.candyBars.name).toBe(1);
+        let itemToReinsert = new CandyBar("candy bar"); 
+        vendingMachine.addItemBackToInventory(itemToReinsert)
+        expect(vendingMachine.candyBars.length).toBe(6)
     });
     it('adds 1 bag of chip objects to vending machine inventory if bag of chips is choosen', function() { //SPEC
-        let itemToReinsert = "bag of chips";
+        let itemToReinsert = new BagOfChips("bag of chips");
         vendingMachine.addItemBackToInventory(itemToReinsert)
         expect(vendingMachine.bagsOfChips.length).toBe(6);
     
     });
     it('adds 1 pack of gum objects to vending machine inventory if pack of gum is choosen', function() { //SPEC
-        let itemToReinsert = "pack of gum";
+        let itemToReinsert = new PackOfGum("pack of gum");
         vendingMachine.addItemBackToInventory(itemToReinsert)
         expect(vendingMachine.packsOfGum.length).toBe(6);
 

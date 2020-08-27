@@ -27,7 +27,7 @@ class VendingMachine {
         }
     }
 
-    //// methods to unit test first: ////
+    //// methods to unit test first: ////    //done
     calculateReturnChange(priceOfItem, moneyInput) {
         let changeToReturn = moneyInput - priceOfItem;
 
@@ -37,7 +37,7 @@ class VendingMachine {
 
         return changeToReturn;
     }
-
+                                    
     removeItemFromInventory(itemToRemove) {
         if(itemToRemove === "candy bar") {
             return this.candyBars.shift();

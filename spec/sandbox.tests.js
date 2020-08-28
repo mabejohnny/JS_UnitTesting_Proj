@@ -98,15 +98,15 @@ describe('VendingMachine constructor', function() {// SUITE
     beforeEach(function() {
         vendingMachine = new VendingMachine();
     });
-    it('returns 10 if 5 is added', function() {
-        let result = addMoneyToMachine(5.00);
-        expect(Object.vendingMachine.amountOfMoneyInChange.name).tobe(10.00)
-        
-
+    it('the amount of money returns 10 if 5 is added', function() {
+        let moneyToAdd = 5;
+        vendingMachine.addMoneyToMachine(moneyToAdd);
+    
+        expect(vendingMachine.amountOfMoneyInChange).tobe(10)
     });
-   
 
 });
+
 describe('vendingMachine performTransaction', function(){ //SUITE
     let vendingMachine;
     beforeEach(function() {
@@ -121,3 +121,7 @@ describe('vendingMachine performTransaction', function(){ //SUITE
 
 });
 
+describe('vendingMachine performTransaction' function(){
+    let vendingMachine;
+    beforeEach()
+})

@@ -89,12 +89,35 @@ describe('VendingMachine constructor', function() {// SUITE
         let itemToReinsert = new PackOfGum("pack of gum");
         vendingMachine.addItemBackToInventory(itemToReinsert)
         expect(vendingMachine.packsOfGum.length).toBe(6);
-
     });
+
   });
-  describe('vendingMachine addItemBackToInventory', function(){ //SUITE
+
+  describe('vendingMachine addMoneyToMachine', function(){ //SUITE
     let vendingMachine;
     beforeEach(function() {
         vendingMachine = new VendingMachine();
     });
+    it('returns 10 if 5 is added', function() {
+        let result = addMoneyToMachine(5.00);
+        expect(Object.vendingMachine.amountOfMoneyInChange.name).tobe(10.00)
+        
+
+    });
+   
+
 });
+describe('vendingMachine performTransaction', function(){ //SUITE
+    let vendingMachine;
+    beforeEach(function() {
+        vendingMachine = new VendingMachine();
+    });
+    it('calculates money to return based on soda selection', function() {
+       let sodaSelection = "cola";
+    
+
+    });
+   
+
+});
+

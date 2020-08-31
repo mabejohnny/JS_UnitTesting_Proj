@@ -102,7 +102,7 @@ describe('VendingMachine constructor', function() {// SUITE
         let moneyToAdd = 5;
         vendingMachine.addMoneyToMachine(moneyToAdd);
     
-        expect(vendingMachine.amountOfMoneyInChange).tobe(10)
+        expect(vendingMachine.amountOfMoneyInChange(5)).tobe(10)
     });
 
 });
@@ -113,16 +113,36 @@ describe('vendingMachine performTransaction', function(){ //SUITE
         vendingMachine = new VendingMachine();
     });
     it('calculates extra money inserted based on item choosen', function() {
-       let itemSelection = "pack of gum";
-       let amountOfMoneyInserted = .20;
-       vendingMachine.performTransaction(itemSelection, amountOfMoneyInserted);
-       expect(vendingMachine.moneyToReturn).tobe(.5);
+      expect(vendingMachine.performTransaction("pack of gum", .20)).toEqual(0.5);
     });
    
 
 });
 
-describe('vendingMachine performTransaction' function(){
-    let vendingMachine;
-    beforeEach()
-})
+
+describe('vendingMachine performTransaction', function(){ //SUITE
+  let vendingMachine;
+  beforeEach(function() {
+      vendingMachine = new VendingMachine();
+  });
+  it('returns true if money inserted is equal to item to dispense price', function() {
+    let itemSelection = "pack of gum";
+    vendingMachine.performTransaction(itemSelection, .25);
+    
+    expect(vendingMachine.moneyToReturn).toEqual(0);
+  });
+ 
+
+});
+
+describe('vendingMachine performTransaction', function(){ //SUITE
+  let vendingMachine;
+  beforeEach(function() {
+      vendingMachine = new VendingMachine();
+  });
+  it('calculates if not enough money was inserted based on item', function() {
+    expect(vendingMachine.performTransaction("pack of gum", .20)).toBe(0.5);
+  });
+ 
+
+});

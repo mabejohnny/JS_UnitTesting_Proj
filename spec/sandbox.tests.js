@@ -112,10 +112,11 @@ describe('vendingMachine performTransaction', function(){ //SUITE
     beforeEach(function() {
         vendingMachine = new VendingMachine();
     });
-    it('calculates money to return based on soda selection', function() {
-       let sodaSelection = "cola";
-    
-
+    it('calculates extra money inserted based on item choosen', function() {
+       let itemSelection = "pack of gum";
+       let amountOfMoneyInserted = .20;
+       vendingMachine.performTransaction(itemSelection, amountOfMoneyInserted);
+       expect(vendingMachine.moneyToReturn).tobe(.5);
     });
    
 
